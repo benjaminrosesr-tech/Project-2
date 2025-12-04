@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyber War</title>
+    <link rel="stylesheet" href="/CSS/cybertactoe.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>Can You Save Humanity?</h1>
+
+    <div id="start-screen">
+      <h2>INITIALIZE SEQUENCE</h2>
+      <p>CHOOSE YOUR SIDE</p>
+      <div class="choice-container">
+        <button class="choice-btn choice-x" onclick="startGame('X')">
+          PLAY AS X
+        </button>
+        <button class="choice-btn choice-o" onclick="startGame('O')">
+          PLAY AS O
+        </button>
+      </div>
+    </div>
+
+    <div id="game-container">
+      <div class="status" id="status">Awaiting Input...</div>
+      <div class="board" id="board">
+        <div class="cell" data-index="0"></div>
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
+      </div>
+      <button class="restart-btn" onclick="fullReset()">REBOOT SYSTEM</button>
+    </div>
+
+    <script src="/Java/cybertactoe.js"></script>
+  </body>
+</html>
