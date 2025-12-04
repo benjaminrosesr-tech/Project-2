@@ -1,0 +1,89 @@
+/* Import a punk-style font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+
+/* --- Base Styles --- */
+body {
+  background-color: #1a1a1a; /* Dark fallback background */
+  /* A subtle, repeating SVG circuit board pattern */
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300ffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  color: #e0e0e0; /* Light grey text for readability */
+  font-family: "Audiowide", sans-serif; /* A futuristic, wide font */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* --- Header and Title --- */
+h1 {
+  color: #ff00ff; /* Neon Pink */
+  font-size: 4rem;
+  text-align: center;
+  /* This creates the glowing effect */
+  text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+  margin-bottom: 2rem;
+}
+
+/* --- Main Content & Form --- */
+main {
+  width: 90%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+#search-form {
+  margin-bottom: 2rem;
+}
+
+input[type="text"],
+button {
+  background-color: transparent;
+  border: 2px solid #00ffff; /* Neon Blue */
+  color: #00ffff;
+  padding: 10px 15px;
+  font-family: inherit;
+  font-size: 1.2rem;
+  margin: 0 5px;
+  transition: all 0.3s ease;
+}
+
+input[type="text"] {
+  min-width: 250px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  box-shadow: 0 0 10px #00ffff; /* Glow on focus */
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #00ffff;
+  color: #1a1a1a; /* Dark text on hover */
+  box-shadow: 0 0 15px #00ffff;
+}
+
+/* --- GIF Container --- */
+#gif-container {
+  border: 3px dashed #ffff00; /* Neon Yellow */
+  padding: 20px;
+  margin-top: 20px;
+  min-height: 300px;
+  box-shadow: 0 0 10px #ffff00; /* Subtle glow for the container */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* --- Individual GIF Styling --- */
+#gif-container img {
+  width: 250px; /* Fixed width for uniformity */
+  height: 200px; /* Fixed height for uniformity */
+  object-fit: cover;
+  border: 2px solid #ff00ff; /* Neon Pink border */
+  box-shadow: 0 0 8px #ff00ff;
+  background-color: #333; /* Placeholder color while loading */
+}
