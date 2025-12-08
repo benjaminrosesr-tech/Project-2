@@ -4,9 +4,13 @@
 /* --- Base Styles --- */
 body {
   background-color: #1a1a1a;
-  background-image: url("../images/cyberpunk\ girl.png");
-  color: #e0e0e0; 
-  font-family: "Audiowide", sans-serif; 
+  background-image: url("../images/Cybernetics.jpg");
+  background-size: cover; /* Make image cover the entire viewport */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center center; /* Center the image */
+  background-attachment: fixed; /* Keep the background fixed during scroll */
+  color: #e0e0e0;
+  font-family: "Audiowide", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -100,8 +104,8 @@ button:hover {
   font-size: 0.7rem;
   padding: 5px 10px;
   /* Match the image's neon pink border */
-  border-color: #ff00ff;
-  color: #ff00ff;
+  border-color: #ffff00;
+  color: #ffff00;
   /* Remove the horizontal margin from the general button style */
   margin: 0;
 }
