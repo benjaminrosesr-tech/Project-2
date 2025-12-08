@@ -1,48 +1,57 @@
-// 1. Add your Giphy API Key here
-const apiKey = "3F5hrTiCdDhIEDVVk76XRjFcpbH4D4NI";
+document.addEventListener("DOMContentLoaded", () => {
+  const apiKey = "qP2936uieVbCtKltWHkve31shyEhvg54";
+  const searchForm = document.getElementById("search-form");
+  const searchInput = document.getElementById("search-input");
+  const gifContainer = document.getElementById("gif-container");
 
-// 2. Get references to the HTML elements you'll need
-const searchForm = document.getElementById("search-form");
-const searchInput = document.getElementById("search-input");
-const gifContainer = document.getElementById("gif-container");
+  searchForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const searchTerm = searchInput.value.trim();
+    if (!searchTerm) return;
 
-// 3. Listen for the form submission
-searchForm.addEventListener("submit", function (event) {
-  // Prevent the form from reloading the page
-  event.preventDefault();
+    gifContainer.innerHTML = "Loading giphs...";
 
-  // Get the user's search term
-  const searchTerm = searchInput.value;
+    try {
+      const response = await fetch(
+        `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${searchTerm}&limit=24&offset=0&rating=g&lang=en`
+      );
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const { data } = await response.json();
 
-  // Check if the user actually typed something
-  if (searchTerm) {
-    fetchGifs(searchTerm);
-  }
-});
+      gifContainer.innerHTML = "";
 
-// 4. Function to fetch GIFs from the Giphy API
-async function fetchGifs(query) {
-  // Clear any previous search results
-  gifContainer.innerHTML = "";
+      if (data.length === 0) {
+        gifContainer.innerHTML = "No giphs found. Try another search.";
+        return;
+      }
 
-  const url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${query}&limit=24&rating=r`;
+      data.forEach((gif) => {
+        // Create a wrapper div to hold the image and button together
+        const gifWrapper = document.createElement("div");
+        gifWrapper.className = "gif-wrapper"; // Assign a class for potential styling
 
-  try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error(`API request failed with status: ${response.status}`);
+        const img = document.createElement("img");
+        img.src = gif.images.fixed_height.url;
+        img.alt = gif.title;
+
+        const copyButton = document.createElement("button");
+        copyButton.textContent = "Copy Image Link";
+        copyButton.onclick = () => {
+          // Use the modern and secure Clipboard API
+          navigator.clipboard.writeText(gif.images.original.url);
+          // Provide user feedback
+          copyButton.textContent = "Copied!";
+          setTimeout(() => (copyButton.textContent = "Copy Image Link"), 2000);
+        };
+
+        gifWrapper.append(img, copyButton);
+        gifContainer.appendChild(gifWrapper);
+      });
+    } catch (error) {
+      console.error("Error fetching GIFs:", error);
+      gifContainer.innerHTML = "Failed to load giphs. Please try again later.";
     }
-    const json = await response.json();
-
-    // Create and display each GIF
-    json.data.forEach((gifData) => {
-      const gifElement = document.createElement("img");
-      gifElement.src = gifData.images.fixed_height.url;
-      gifElement.alt = gifData.title;
-      gifContainer.appendChild(gifElement);
-    });
-  } catch (error) {
-    console.error("Error fetching GIFs:", error);
-    gifContainer.innerHTML = `<p style="color: #ff00ff;">Sorry, couldn't load GIFs. Please try again.</p>`;
-  }
-}
+  });
+});
