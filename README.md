@@ -15,10 +15,13 @@
 3. As a user the giphys search should be easily copy able to paste in any other website or software being used on the pc/phone/tablet.
 
 ## Wire Frame
- TBD
+<img src="./images/WireFrame.png">
+<img src="./images/homepage.png">
+<img src="./images/game1.png">
+<img src="./images/Game2.png">
 
 ## Future Additions
-TBD
+Adding a catagories section and starting the giphy search with random images in place already upon loading the page
 
 ## Author
 
