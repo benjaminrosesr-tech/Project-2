@@ -5,15 +5,15 @@
 body {
   background-color: #1a1a1a;
   background-image: url("../images/Cybernetics.jpg");
-  background-size: cover; /* Make image cover the entire viewport */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-position: center center; /* Center the image */
-  background-attachment: fixed; /* Keep the background fixed during scroll */
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center center;
+  background-attachment: fixed; 
   color: #e0e0e0;
   font-family: "Audiowide", sans-serif;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  
   margin: 0;
   min-height: 100vh;
 }
@@ -25,18 +25,19 @@ h1 {
   text-align: center;
   /* This creates the glowing effect */
   text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
-  margin-bottom: 2rem;
+  margin: 2rem;
 }
 
 /* --- Main Content & Form --- */
 main {
+  margin: 1rem auto;
   width: 90%;
   max-width: 1200px;
   text-align: center;
 }
 
 #search-form {
-  margin-bottom: 2rem;
+  margin: 1rem;
 }
 
 input[type="text"],
@@ -82,8 +83,8 @@ button:hover {
 
 /* --- Individual GIF Styling --- */
 #gif-container img {
-  width: 250px; /* Fixed width for uniformity */
-  height: 200px; /* Fixed height for uniformity */
+  width: 250px; 
+  height: 200px; 
   object-fit: cover;
   border: 2px solid #ff00ff; /* Neon Pink border */
   box-shadow: 0 0 8px #ff00ff;

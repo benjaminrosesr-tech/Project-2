@@ -28,10 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       data.forEach((gif) => {
-        // Create a wrapper div to hold the image and button together
         const gifWrapper = document.createElement("div");
-        gifWrapper.className = "gif-wrapper"; // Assign a class for potential styling
-
+        gifWrapper.className = "gif-wrapper";
         const img = document.createElement("img");
         img.src = gif.images.fixed_height.url;
         img.alt = gif.title;
@@ -39,9 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const copyButton = document.createElement("button");
         copyButton.textContent = "Copy Image Link";
         copyButton.onclick = () => {
-          // Use the modern and secure Clipboard API
+          
           navigator.clipboard.writeText(gif.images.original.url);
-          // Provide user feedback
+          
           copyButton.textContent = "Copied!";
           setTimeout(() => (copyButton.textContent = "Copy Image Link"), 2000);
         };
