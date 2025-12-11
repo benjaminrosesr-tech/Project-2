@@ -22,8 +22,8 @@
 <img src="./images/Game2.png">
 
 ## Future Additions
-Adding a catagories section and starting the giphy search with random images in place already upon loading the page
-Also would like to package the game portion as a deployable ap for android and apple users
+1. Add a catagories section and starting the giphy search with random images in place already upon loading the page
+2. Would like to package the game portion as a deployable ap for android and apple users
 ## Author
 
 Benjamin Rose Linkdin: www.linkedin.com/in/benjamin-rose-tech
