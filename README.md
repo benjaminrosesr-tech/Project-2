@@ -1,5 +1,5 @@
 # The Neon Punk Giphy Search and game
- First and formost this is going to be a page set up and ddedicated to searching Neon Punk/CYber Punk style Giphs using a Giphy API
+ First and for most this is going to be a page set up and dedicated to searching Neon Punk/Cyber Punk style Giphs using a Giphy API
  the search will be adult rated as to not leave any possible image out.  Im also going to attach a little Tic Tac Toe game i was working on on the side to better understand how Java and Css as well as Html work together to produce a simple little android deployable game for my daughter to play with on my Phone.
 
 ## Technology
@@ -22,7 +22,7 @@
 
 ## Future Additions
 Adding a catagories section and starting the giphy search with random images in place already upon loading the page
-Also would like to package the game portion as a deployable ap for adriod and apple users
+Also would like to package the game portion as a deployable ap for android and apple users
 ## Author
 
 Benjamin Rose Linkdin: www.linkedin.com/in/benjamin-rose-tech
