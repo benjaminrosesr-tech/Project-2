@@ -7,7 +7,8 @@
 2. CSS
 3. Async Java Script
 4. JSON
-5. FUN - yeah just plane old fun
+5. Giphy API
+6. FUN - yeah just plane old fun
 
 ## User Stories
 1. As the user i dont not want to be restricted by an age barrier in my search!
